@@ -217,6 +217,16 @@ header {
   );
 }
 
+.button-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.coming-soon {
+	color: grey;
+	margin-left: 15px;
+}
+
 /* -------- PRODUCT SECTION ----------- */
 .section-3 {
   display: grid;

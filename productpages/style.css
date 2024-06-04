@@ -131,10 +131,7 @@ main {
 /* -------- PRODUCT OVERVIEW -------------- */
 
 .overview {
-	display: flex;
 	width: 100%;
-	justify-content: space-between;
-    align-items: flex-start;
     margin: 20px;
 	margin-top: 50px;
 }
@@ -175,7 +172,6 @@ main {
 }
 
 .overview-info {
-    width: 45%;
 	margin-right: 40px;
 	margin-top: 15px;
 }

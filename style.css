@@ -405,6 +405,60 @@ input[type="submit"]:hover {
   text-decoration: underline;
 }
 
+/* =============== ABOUT US PAGE ======== */
+
+.about-us-page {
+	background: black;
+}
+
+.explanation-wrapper {
+	padding-left: 20%;
+	padding-right: 20%;
+	
+}
+
+.explanation-text {
+	font-size: 12pt;
+	color: white;
+}
+
+.black-footer {
+	color: white;
+	background: black;
+}
+
+.title-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	color: white;
+}
+
+.title-columns {
+	display: flex;
+	justify-content: center;
+	gap: 20px; /* Adjust space between columns */
+	margin-top: 20px; /* Space between title and columns */
+}
+
+.title-column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.title-column img {
+	width: 250px; /* Adjust image width */
+	height: auto;
+}
+
+.title {
+	font-size: 24px; /* Adjust title size */
+	margin-top: 20px; /* Space above title */
+}
+
+
 /* =============== MEDIA QUERIES ======= */
 
 @media screen and (max-width: 768px) {
@@ -626,4 +680,9 @@ input[type="submit"]:hover {
     color: hsla(0, 0%, 98%, 0.322);
     font-size: 0.8rem;
   }
+}
+
+.black-footer {
+	color: white;
+	background: black;
 }

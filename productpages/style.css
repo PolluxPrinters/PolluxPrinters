@@ -180,8 +180,20 @@ main {
 	margin-top: 15px;
 }
 
+.genealogy-tree-wrapper {
+	display: flex;
+	flex-direction: row;
+}
+
+.genealogy-tree-dummy {
+	width: 50%;
+}
+
 .genealogy-tree {
 	color: grey;
+	margin-top: 20px;
+	margin-left: 15%;
+	width: 50%;
 }
 
 .product-title {
@@ -193,6 +205,10 @@ main {
     font-size: 24px;
     color: #333;
 	margin-top: 15px;
+}
+
+.shopify-buy-button {
+	margin-top: 20px;
 }
 
 /* ------ SPECIFICATIONS ------ */

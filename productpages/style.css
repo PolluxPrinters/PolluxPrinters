@@ -137,7 +137,6 @@ main {
 .overview {
 	width: 100%;
     margin: 20px;
-	margin-top: 50px;
 }
 
 .image-container {
@@ -191,7 +190,6 @@ main {
 
 .genealogy-tree {
 	color: grey;
-	margin-top: 20px;
 	margin-left: 15%;
 	width: 50%;
 }

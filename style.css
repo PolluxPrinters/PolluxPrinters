@@ -180,6 +180,11 @@ header {
   background-color: var(--dark-color);
   padding: 0;
 }
+
+.offer-img-container {
+	overflow: hidden;
+}
+	
 .offer-description {
   background-color: var(--white-color-alt);
   padding: 0 1rem;
@@ -291,6 +296,70 @@ header {
     color: #fff;
   }
 }
+
+/* == Shining Button == */
+.btn-shine {
+  transform: translate(-1%, -1%);
+  padding: 12px 48px;
+  color: #fff;
+  background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: "Raleway", sans-serif;
+}
+@-moz-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+@-webkit-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+@-o-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+
 
 /* ========= SUBSCRIBE SECTION ========== */
 .section-5 {
@@ -461,6 +530,7 @@ input[type="submit"]:hover {
 
 /* =============== MEDIA QUERIES ======= */
 
+/* === SMALL AND MOBILE SCREENS == */
 @media screen and (max-width: 768px) {
   .container {
     padding: 0 1rem;
@@ -507,7 +577,14 @@ input[type="submit"]:hover {
   .hide-bx {
     display: none !important;
   }
+  .offer-1-img {
+    transition: transform 0.5s ease; /* Smooth zoom transition */
+    transform-origin: center center;
+    transform: scale(calc(1 + (1200 - 100vw) / 1200)); /* Dynamic zoom */
+  }
 }
+
+/* === REGULAR SCREENS === */
 @media (min-width: 769px) {
   header {
     padding: 1rem 5rem;
@@ -552,7 +629,7 @@ input[type="submit"]:hover {
   }
   .offer-1-img {
     grid-area: offer-1-img;
-    object-fit: fill;
+    object-fit: cover;
   }
   .offer-2-img {
     grid-area: offer-2-img;

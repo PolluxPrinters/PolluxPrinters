@@ -31,18 +31,18 @@ document.addEventListener('DOMContentLoaded', function() {
 	function updateZoom() {
 		const img = document.querySelector('.offer-img');
 		if (img) {
-                    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-                    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-                    const baseScale = 1;
-                    const maxScale = 1.5; // Maximum zoom scale
+			const containerWidth = document.querySelector('.offer-img-container').clientWidth;
+			const containerHeight = document.querySelector('.offer-img-container').clientHeight;
+			const naturalWidth = img.naturalWidth;
+			const naturalHeight = img.naturalHeight;
 
-                    // Calculate scale based on viewport width and height
-                    const scaleWidth = baseScale + (1200 - vw) / 1200 * (maxScale - baseScale);
-                    const scaleHeight = baseScale + (800 - vh) / 800 * (maxScale - baseScale);
-                    const scale = Math.min(scaleWidth, scaleHeight); // Use the smaller scale to fit both dimensions
+			// Calculate scale based on container and image natural dimensions
+			const scaleX = containerWidth / naturalWidth;
+			const scaleY = containerHeight / naturalHeight;
+			const scale = Math.min(scaleX, scaleY); // Use the smaller scale to fit both dimensions
 
-                    img.style.transform = `scale(${scale})`;
-                }
+			img.style.transform = `scale(${scale})`;
+		}
 }
 // Initial zoom update
 updateZoom();

@@ -31,18 +31,27 @@ document.addEventListener('DOMContentLoaded', function() {
 	function updateZoom() {
 		const img = document.querySelector('.offer-img');
 		if (img) {
-			const containerWidth = document.querySelector('.offer-img-container').clientWidth;
-			const containerHeight = document.querySelector('.offer-img-container').clientHeight;
-			const naturalWidth = img.naturalWidth;
-			const naturalHeight = img.naturalHeight;
+                    const containerWidth = document.querySelector('.image-container').clientWidth;
+                    const containerHeight = document.querySelector('.image-container').clientHeight;
+                    const naturalWidth = img.naturalWidth;
+                    const naturalHeight = img.naturalHeight;
 
-			// Calculate scale based on container and image natural dimensions
-			const scaleX = containerWidth / naturalWidth;
-			const scaleY = containerHeight / naturalHeight;
-			const scale = Math.min(scaleX, scaleY); // Use the smaller scale to fit both dimensions
+                    // Determine visibility based on container and image dimensions
+                    const isVisibleHorizontally = containerWidth >= naturalWidth;
+                    const isVisibleVertically = containerHeight >= naturalHeight;
 
-			img.style.transform = `scale(${scale})`;
-		}
+                    // Adjust image visibility
+                    img.style.opacity = isVisibleHorizontally && isVisibleVertically ? 1 : 0;
+
+                    // Adjust image dimensions to fill container if it exceeds image size
+                    if (containerWidth > naturalWidth || containerHeight > naturalHeight) {
+                        img.style.width = '100%';
+                        img.style.height = '100%';
+                    } else {
+                        img.style.width = 'auto';
+                        img.style.height = 'auto';
+                    }
+                }
 }
 // Initial zoom update
 updateZoom();

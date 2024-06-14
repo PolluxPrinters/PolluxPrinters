@@ -31,14 +31,18 @@ document.addEventListener('DOMContentLoaded', function() {
 	function updateZoom() {
 		const img = document.querySelector('.offer-img');
 		if (img) {
-			const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-			const baseScale = 1;
-			const maxScale = 1.3; // Maximum zoom scale
+                    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+                    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+                    const baseScale = 1;
+                    const maxScale = 1.5; // Maximum zoom scale
 
-			// Calculate scale based on viewport width
-			const scale = baseScale + (1200 - vw) / 1200 * (maxScale - baseScale);
-			img.style.transform = `scale(${scale})`;
-		}
+                    // Calculate scale based on viewport width and height
+                    const scaleWidth = baseScale + (1200 - vw) / 1200 * (maxScale - baseScale);
+                    const scaleHeight = baseScale + (800 - vh) / 800 * (maxScale - baseScale);
+                    const scale = Math.min(scaleWidth, scaleHeight); // Use the smaller scale to fit both dimensions
+
+                    img.style.transform = `scale(${scale})`;
+                }
 }
 // Initial zoom update
 updateZoom();

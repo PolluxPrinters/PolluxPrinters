@@ -180,11 +180,10 @@ header {
   background-color: var(--dark-color);
   padding: 0;
 }
-
 .offer-img-container {
-	overflow: hidden;
+  overflow: hidden;
 }
-	
+
 .offer-description {
   background-color: var(--white-color-alt);
   padding: 0 1rem;

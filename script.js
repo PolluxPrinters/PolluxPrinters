@@ -1,61 +1,22 @@
-
-'use strict'
-
-const menuToggle = document.querySelector('.menu-toggle');
-const bxMenu = document.querySelector('.bx-menu');
-const bxX = document.querySelector('.bx-x');
-
-const navBar = document.querySelector('.navbar');
-
-// --- open menu ---
-
-bxMenu.addEventListener('click', (e)=> {
-    if(e.target.classList.contains('bx-menu')){
-        navBar.classList.add('show-navbar');
-        bxMenu.classList.add('hide-bx');
-        bxX.classList.add('show-bx');
-    }
-})
-
-// --- close menu ---
-
-bxX.addEventListener('click', (e)=> {
-    if(e.target.classList.contains('bx-x')){
-        navBar.classList.remove('show-navbar');
-        bxMenu.classList.remove('hide-bx');
-        bxX.classList.remove('show-bx');
-    }
-})
-
-document.addEventListener('DOMContentLoaded', function() {
-	function updateZoom() {
-		const img = document.querySelector('.offer-img');
+function scaleImages() {
+	const containers = document.querySelectorAll('.offer-img-container');
+	containers.forEach(container => {
+		const img = container.querySelector('.offer-img');
 		if (img) {
-                    const containerWidth = document.querySelector('.image-container').clientWidth;
-                    const containerHeight = document.querySelector('.image-container').clientHeight;
-                    const naturalWidth = img.naturalWidth;
-                    const naturalHeight = img.naturalHeight;
+			const imgNaturalWidth = img.naturalWidth;
+			const imgNaturalHeight = img.naturalHeight;
+			const containerWidth = container.clientWidth;
+			const containerHeight = container.clientHeight;
 
-                    // Determine visibility based on container and image dimensions
-                    const isVisibleHorizontally = containerWidth >= naturalWidth;
-                    const isVisibleVertically = containerHeight >= naturalHeight;
+			const widthRatio = containerWidth / imgNaturalWidth;
+			const heightRatio = containerHeight / imgNaturalHeight;
+			const scale = Math.max(widthRatio, heightRatio);
 
-                    // Adjust image visibility
-                    img.style.opacity = isVisibleHorizontally && isVisibleVertically ? 1 : 0;
-
-                    // Adjust image dimensions to fill container if it exceeds image size
-                    if (containerWidth > naturalWidth || containerHeight > naturalHeight) {
-                        img.style.width = '100%';
-                        img.style.height = '100%';
-                    } else {
-                        img.style.width = 'auto';
-                        img.style.height = 'auto';
-                    }
-                }
+			img.style.width = `${imgNaturalWidth * scale}px`;
+			img.style.height = `${imgNaturalHeight * scale}px`;
+		}
+	});
 }
-// Initial zoom update
-updateZoom();
 
-// Update zoom on window resize
-window.addEventListener('resize', updateZoom);
-});
+window.addEventListener('resize', scaleImages);
+window.addEventListener('DOMContentLoaded', scaleImages);

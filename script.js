@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 		const offerMaxWidth = smallestWidth * 2;
-		if (offerMaxWidth > 500)
+		if (offerMaxWidth > 700)
 		{
 			const elementsToAdjust = document.querySelectorAll('.offer');
 			elementsToAdjust.forEach((element) => {

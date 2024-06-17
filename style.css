@@ -406,13 +406,17 @@ input[type="submit"]:hover {
 .footer-items h3:last-child {
   padding-bottom: 2rem;
 }
-
 .end-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--third-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--third-color);
+}
+.footer-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
 }
 .copyright {
   color: var(--white-color-alt);
@@ -430,6 +434,22 @@ input[type="submit"]:hover {
 }
 .designer:hover {
   text-decoration: underline;
+}
+.x-twitter:hover {
+  background-color: hsl(9, 94%, 61%);
+  color: black;
+  transition-duration: .3s;
+}
+.social-media {
+  width: 35px;
+  height: 35px;
+  background-color: var(--third-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .3s;
+  gap: 25px;
 }
 
 /* =============== ABOUT US PAGE ======== */
@@ -534,6 +554,11 @@ input[type="submit"]:hover {
   }
   .hide-bx {
     display: none !important;
+  }
+  .explanation-wrapper {
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 50px;
   }
 }
 
@@ -687,14 +712,6 @@ input[type="submit"]:hover {
   }
   .footer-items h3 {
     font-size: 0.9rem;
-  }
-
-  .end-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--third-color);
   }
   .copyright {
     color: hsla(0, 0%, 98%, 0.747);

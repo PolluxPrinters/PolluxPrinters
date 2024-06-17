@@ -128,7 +128,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			elementsToAdjust.forEach((element) => {
 				element.style.maxWidth = `${offerMaxWidth}px`;
 			});
-			document.getElementById('orphika-view-item').textContent = offerMaxWidth + '';
 			//console.log(`All images loaded. Smallest width is ${smallestWidth}px.`);
 		}
     });

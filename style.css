@@ -168,7 +168,7 @@ header {
   align-items: center;
 }
 .offer {
-  background-color: var(--dark-color);
+  background-color: hsla(0, 0%, 0%, 0);
   margin: 1rem 0;
   display: grid;
 }

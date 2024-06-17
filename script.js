@@ -36,7 +36,7 @@
 				console.log("New Height: " + img.style.height);
 				console.log("New Width: " + img.style.width);
 			}
-		} else {
+		} /*else {
 			img.addEventListener('load', function() {
 				const imgWidth = img.offsetWidth;
 				const imgHeight = img.offsetHeight;
@@ -71,10 +71,10 @@
 					console.log("New Width: " + img.style.width);
 				}
 			});
-		}
+		}*//*
 	});
 }
-
+/*
 window.addEventListener('resize', scaleImages);
 window.addEventListener('DOMContentLoaded', scaleImages);*/
 
@@ -122,12 +122,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 		const offerMaxWidth = smallestWidth * 2;
-
-        const elementsToAdjust = document.querySelectorAll('.offer');
-        elementsToAdjust.forEach((element) => {
-            element.style.maxWidth = `${offerMaxWidth}px`;
-        });
-
-        console.log(`All images loaded. Smallest width is ${smallestWidth}px.`);
+		if (offerMaxWidth > 500)
+		{
+			const elementsToAdjust = document.querySelectorAll('.offer');
+			elementsToAdjust.forEach((element) => {
+				element.style.maxWidth = `${offerMaxWidth}px`;
+			});
+			document.getElementById('orphika-view-item').textContent = offerMaxWidth + '';
+			//console.log(`All images loaded. Smallest width is ${smallestWidth}px.`);
+		}
     });
 });

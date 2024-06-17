@@ -1,4 +1,4 @@
-function scaleImages() {
+/*function scaleImages() {
 	const containers = document.querySelectorAll('.offer-img-container');
 	containers.forEach(container => {
 		const img = container.querySelector('.offer-img');
@@ -76,4 +76,58 @@ function scaleImages() {
 }
 
 window.addEventListener('resize', scaleImages);
-window.addEventListener('DOMContentLoaded', scaleImages);
+window.addEventListener('DOMContentLoaded', scaleImages);*/
+
+document.addEventListener('DOMContentLoaded', function() {
+    function onAllImagesLoaded(callback) {
+        const images = document.querySelectorAll('img');
+        let loadedImagesCount = 0;
+
+        images.forEach((img) => {
+            if (img.complete) {
+                loadedImagesCount++;
+                if (loadedImagesCount === images.length) {
+                    callback();
+                }
+            } else {
+                img.addEventListener('load', () => {
+                    loadedImagesCount++;
+                    if (loadedImagesCount === images.length) {
+                        callback();
+                    }
+                });
+                img.addEventListener('error', () => {
+                    loadedImagesCount++;
+                    if (loadedImagesCount === images.length) {
+                        callback();
+                    }
+                });
+            }
+        });
+
+        // Handle case where there are no images
+        if (images.length === 0) {
+            callback();
+        }
+    }
+
+    onAllImagesLoaded(function() {
+        const images = document.querySelectorAll('.offer-img');
+        let smallestWidth = Infinity;
+
+        images.forEach((img) => {
+            const width = img.offsetWidth;
+            if (width < smallestWidth) {
+                smallestWidth = width;
+            }
+        });
+		const offerMaxWidth = smallestWidth * 2;
+
+        const elementsToAdjust = document.querySelectorAll('.offer');
+        elementsToAdjust.forEach((element) => {
+            element.style.maxWidth = `${offerMaxWidth}px`;
+        });
+
+        console.log(`All images loaded. Smallest width is ${smallestWidth}px.`);
+    });
+});

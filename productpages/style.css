@@ -432,7 +432,7 @@ input[type="submit"]:hover {
 }
 .copyright {
   color: var(--white-color-alt);
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   font-size: 0.9rem;
 }
 .copyright b {
@@ -659,7 +659,7 @@ input[type="submit"]:hover {
   }
   .copyright {
     color: hsla(0, 0%, 98%, 0.747);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     font-size: 0.8rem;
   }
   .copyright b {

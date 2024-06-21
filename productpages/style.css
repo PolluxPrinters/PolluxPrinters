@@ -422,13 +422,17 @@ input[type="submit"]:hover {
 .footer-items h3:last-child {
   padding-bottom: 2rem;
 }
-
 .end-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--third-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--third-color);
+}
+.footer-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
 }
 .copyright {
   color: var(--white-color-alt);
@@ -444,8 +448,29 @@ input[type="submit"]:hover {
   padding-bottom: 0.5rem;
   font-size: 0.9rem;
 }
+.designer {
+  color: hsla(0, 0%, 98%, 0.541);
+  padding-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
 .designer:hover {
   text-decoration: underline;
+}
+.x-twitter:hover {
+  background-color: hsl(9, 94%, 61%);
+  color: black;
+  transition-duration: .3s;
+}
+.social-media {
+  width: 35px;
+  height: 35px;
+  background-color: var(--third-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .3s;
+  gap: 25px;
 }
 
 /* =============== MEDIA QUERIES ======= */
@@ -648,14 +673,6 @@ input[type="submit"]:hover {
   }
   .footer-items h3 {
     font-size: 0.9rem;
-  }
-
-  .end-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--third-color);
   }
   .copyright {
     color: hsla(0, 0%, 98%, 0.747);

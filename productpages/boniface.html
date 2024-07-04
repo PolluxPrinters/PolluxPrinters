@@ -14,6 +14,25 @@
 
 	  gtag('config', 'AW-16634356669');
 	</script>
+	
+	<!-- Event snippet for Purchase conversion page
+	In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+	<script>
+	function gtag_report_conversion(url) {
+	  var callback = function () {
+		if (typeof(url) != 'undefined') {
+		  window.location = url;
+		}
+	  };
+	  gtag('event', 'conversion', {
+		  'send_to': 'AW-16634356669/pmrICLCO9b8ZEL3H8Ps9',
+		  'transaction_id': '',
+		  'event_callback': callback
+	  });
+	  return false;
+	}
+	</script>
+
 </head>
 
 <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
